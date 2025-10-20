@@ -19,7 +19,13 @@
                                                         <xs:complexType>
                                                             <xs:sequence>
                                                                 <xs:element name="nombre" type="xs:string"/>
-                                                                <xs:element name="orcid" type="xs:string" minOccurs="0"/>
+                                                                <xs:element name="orcid" minOccurs="0">
+                                                                    <xs:simpleType>
+                                                                        <xs:restriction base="xs:string">
+                                                                            <xs:pattern value="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"/>
+                                                                        </xs:restriction>
+                                                                    </xs:simpleType>
+                                                                </xs:element>
                                                             </xs:sequence>
                                                         </xs:complexType>
                                                     </xs:element>
@@ -70,7 +76,13 @@
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="nombre" type="xs:string"/>
-                                        <xs:element name="email" type="xs:string"/>
+                                        <xs:element name="email">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value=".*@.*"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
                                     </xs:sequence>
                                     <xs:attribute name="id" type="xs:ID" use="required"/>
                                     <xs:attribute name="tipo" type="xs:string" use="required"/>
