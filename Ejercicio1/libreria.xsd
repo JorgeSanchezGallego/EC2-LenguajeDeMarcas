@@ -36,7 +36,7 @@
                                         </xs:element>
                                     </xs:sequence>
                                     <xs:attribute name="id" type="xs:ID" use="required"/>
-                                    <xs:attribute name="categoria" type="xs:string" use="required"/>
+                                    <xs:attribute name="categoria" type="categoria_libros" use="required"/>
                                     <xs:attribute name="isbn" type="isbn13_rest" use="required"/>
                                     <xs:attribute name="paginas" type="xs:integer" use="optional"/>
                                 </xs:complexType>
@@ -55,7 +55,7 @@
                                         <xs:element name="anio" type="xs:gYear"/>
                                     </xs:sequence>
                                     <xs:attribute name="id" type="xs:ID" use="required"/>
-                                    <xs:attribute name="area" type="xs:string" use="required"/>
+                                    <xs:attribute name="area" type="area_revistas" use="required"/>
                                     <xs:attribute name="issn" type="issn_rest" use="required"/>
                                     <xs:attribute name="numero" type="xs:integer" use="required"/>
                                 </xs:complexType>
@@ -74,7 +74,7 @@
                                         <xs:element name="email" type="email_rest"/>
                                     </xs:sequence>
                                     <xs:attribute name="id" type="xs:ID" use="required"/>
-                                    <xs:attribute name="tipo" type="xs:string" use="required"/>
+                                    <xs:attribute name="tipo" type="enum_usuario" use="required"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
@@ -89,7 +89,7 @@
                                     <xs:sequence>
                                         <xs:element name="fecha_inicio" type="xs:date"/>
                                         <xs:element name="fecha_fin" type="xs:date" minOccurs="0"/>
-                                        <xs:element name="estado" type="xs:string"/>
+                                        <xs:element name="estado" type="estado_prestamo"/>
                                     </xs:sequence>
                                     <xs:attribute name="id" type="xs:ID" use="required"/>
                                     <xs:attribute name="itemRef" type="xs:string" use="required"/>
@@ -133,5 +133,47 @@
             <xs:pattern value="\d{4}-\d{3}[\dXx]"/>
         </xs:restriction>
     </xs:simpleType>
+
+
+    <xs:simpleType name="enum_usuario">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="alumno"/>
+            <xs:enumeration value="profesor"/>
+        </xs:restriction>
+    </xs:simpleType>
     
+
+    <xs:simpleType name="categoria_libros">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="novela"/>
+            <xs:enumeration value="tecnico"/>
+            <xs:enumeration value="fantasia"/>
+            <xs:enumeration value="romance"/>
+            <xs:enumeration value="terror"/>
+            <xs:enumeration value="infantil"/>
+            <xs:enumeration value="deporte"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="area_revistas">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="computacion"/>
+            <xs:enumeration value="ingenieria"/>
+            <xs:enumeration value="matematicas"/>
+            <xs:enumeration value="quimica"/>
+            <xs:enumeration value="fisica"/>
+            <xs:enumeration value="derecho"/>
+            <xs:enumeration value="filosofia"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="estado_prestamo">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="en_curso"/>
+            <xs:enumeration value="devuelto"/>
+            <xs:enumeration value="retraso"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
