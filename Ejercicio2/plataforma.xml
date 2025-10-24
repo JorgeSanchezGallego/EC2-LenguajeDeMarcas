@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plataforma SYSTEM "plataforma.dtd">
+
+<plataforma fecha_publicacion="20/06/2020">
+    <cursos>
+        <curso id="A001" codigo="2222">
+            <titulo>Desarrollo aplicaciones web</titulo>
+            <nivel>Grado superior</nivel>
+            <modalidad>Online</modalidad>
+            <horas>2000</horas>
+            <modulos>
+                <modulo clave="xxx">
+                    <nombre>Inteligencia Artifical</nombre>
+                    <horas>50</horas>
+                </modulo>
+                <modulo>
+                    <nombre>Prework Java</nombre>
+                    <horas>10</horas>
+                </modulo>
+            </modulos>
+        </curso>
+        <curso id="A002">
+            <titulo>Desarrollo de aplicaciones multimedia</titulo>
+            <nivel>Grado superior</nivel>
+            <modalidad>Presencial</modalidad>
+            <horas>2000</horas>
+        </curso>
+    </cursos>
+    <alumnos>
+        <alumno id="B001" nif="555444333D">
+            <nombre>Jorge Sánchez</nombre>
+            <email>jorge@thepower.com</email>
+            <telefono>666555444</telefono>
+        </alumno>
+        <alumno id="B002">
+            <nombre>Ander Resano</nombre>
+            <email>ander@thepower.com</email>
+        </alumno>
+        <alumno id="B003" nif="342342342F">
+            <nombre>Joa Zamorano</nombre>
+            <email>joa@thepower.com</email>
+        </alumno>
+    </alumnos>
+    <matriculas>
+        <matricula id="C001" alumnoRef="B001" cursoRef="A001">
+            <fecha_alta>15/02/2025</fecha_alta>
+            <estado>Activa</estado>
+        </matricula>
+        <matricula id="C002" alumnoRef="B002" cursoRef="A002">
+            <fecha_alta>15/02/2025</fecha_alta>
+            <estado>Anulada</estado>
+        </matricula>
+        <matricula id="C003" alumnoRef="B003" cursoRef="A001">
+            <fecha_alta>15/02/2025</fecha_alta>
+            <estado>Activa</estado>
+        </matricula>
+    </matriculas>
+    <evaluaciones>
+        <evaluacion id="D001" matriculaRef="C001">
+            <instrumento>Java</instrumento>
+            <convocatoria>Febrero</convocatoria>
+            <nota>10</nota>
+        </evaluacion>
+        <evaluacion id="D002" matriculaRef="C002">
+            <instrumento>Python</instrumento>
+            <convocatoria>Febrero</convocatoria>
+            <nota>9</nota>
+        </evaluacion>
+        <evaluacion id="D003" matriculaRef="C003">
+            <instrumento>Sistemas</instrumento>
+            <convocatoria>Febrero</convocatoria>
+            <nota>10</nota>
+        </evaluacion>
+    </evaluaciones>
+</plataforma>
