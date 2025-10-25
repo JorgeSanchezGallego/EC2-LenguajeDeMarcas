@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plataforma SYSTEM "plataforma.dtd">
+<!--<!DOCTYPE plataforma SYSTEM "plataforma.dtd">-->
 
-<plataforma fecha_publicacion="20/06/2020">
+<plataforma xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="plataforma.xsd" fecha_publicacion="2025-06-10">
     <cursos>
-        <curso id="A001" codigo="2222">
+        <curso id="A001" codigo="DAW22">
             <titulo>Desarrollo aplicaciones web</titulo>
             <nivel>Grado superior</nivel>
             <modalidad>Online</modalidad>
@@ -27,7 +27,7 @@
         </curso>
     </cursos>
     <alumnos>
-        <alumno id="B001" nif="555444333D">
+        <alumno id="B001" nif="53243556D">
             <nombre>Jorge Sánchez</nombre>
             <email>jorge@thepower.com</email>
             <telefono>666555444</telefono>
@@ -36,22 +36,22 @@
             <nombre>Ander Resano</nombre>
             <email>ander@thepower.com</email>
         </alumno>
-        <alumno id="B003" nif="342342342F">
+        <alumno id="B003" nif="Y1234567X">
             <nombre>Joa Zamorano</nombre>
             <email>joa@thepower.com</email>
         </alumno>
     </alumnos>
     <matriculas>
         <matricula id="C001" alumnoRef="B001" cursoRef="A001">
-            <fecha_alta>15/02/2025</fecha_alta>
+            <fecha_alta>2025-02-15</fecha_alta>
             <estado>Activa</estado>
         </matricula>
         <matricula id="C002" alumnoRef="B002" cursoRef="A002">
-            <fecha_alta>15/02/2025</fecha_alta>
+            <fecha_alta>2025-02-15</fecha_alta>
             <estado>Anulada</estado>
         </matricula>
         <matricula id="C003" alumnoRef="B003" cursoRef="A001">
-            <fecha_alta>15/02/2025</fecha_alta>
+            <fecha_alta>2025-02-15</fecha_alta>
             <estado>Activa</estado>
         </matricula>
     </matriculas>
