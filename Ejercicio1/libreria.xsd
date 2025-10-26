@@ -105,10 +105,10 @@
         </xs:complexType>
     </xs:element>
 
-    
+    <!-- Restricciones -->
     <xs:simpleType name="orcid_rest">
         <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"/>
+            <xs:pattern value="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"/> <!-- Para orcid, son 4 bloques de 4 numeros separados por - -->
         </xs:restriction>
     </xs:simpleType>
     
@@ -116,21 +116,21 @@
      
     <xs:simpleType name="email_rest">
         <xs:restriction base="xs:string">
-            <xs:pattern value="[^@]+@[^@]+\.[^@]+"/>
+            <xs:pattern value="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/> <!-- Para email valido, primer bloque acepta letras, numeros y ._- , +@, segundo bloque acepta letras, numeros . y - , seguido de un . y termina con minimo 2 letras-->
         </xs:restriction>
     </xs:simpleType>
 
 
     <xs:simpleType name="isbn13_rest">
         <xs:restriction base="xs:string">
-            <xs:pattern value="97(8|9)[- ]?\d{1,5}[- ]?\d{1,7}[- ]?\d{1,7}[- ]?\d"/>
+            <xs:pattern value="97(8|9)[- ]?\d{1,5}[- ]?\d{1,7}[- ]?\d{1,7}[- ]?\d"/> <!--Debe empezar por 97 seguido de un 8 o 9, el siguiente puede ser un - o un espacio, o nada,  le sigue un digito del 1 al 9 y en cada bloque el min y maximo que puede aparecer, y al final otro digito-->
         </xs:restriction>
     </xs:simpleType>
 
 
     <xs:simpleType name="issn_rest">
         <xs:restriction base="xs:string">
-            <xs:pattern value="\d{4}-\d{3}[\dXx]"/>
+            <xs:pattern value="\d{4}-\d{3}[\dXx]"/><!--1 digito 4 veces, - , 3 digitos más, y que termine con un caracter que puede ser numero o x X -->
         </xs:restriction>
     </xs:simpleType>
 
@@ -138,14 +138,14 @@
     <xs:simpleType name="enum_usuario">
         <xs:restriction base="xs:string">
             <xs:enumeration value="alumno"/>
-            <xs:enumeration value="profesor"/>
+            <xs:enumeration value="profesor"/> <!-- Enumeración de usuario:tipo-->
         </xs:restriction>
     </xs:simpleType>
     
 
     <xs:simpleType name="categoria_libros">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="novela"/>
+            <xs:enumeration value="novela"/> <!-- Enumeración de libros:categoria-->
             <xs:enumeration value="tecnico"/>
             <xs:enumeration value="fantasia"/>
             <xs:enumeration value="romance"/>
@@ -158,7 +158,7 @@
 
     <xs:simpleType name="area_revistas">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="computacion"/>
+            <xs:enumeration value="computacion"/> <!-- Enumeración de revistas:area-->
             <xs:enumeration value="ingenieria"/>
             <xs:enumeration value="matematicas"/>
             <xs:enumeration value="quimica"/>
@@ -171,7 +171,7 @@
 
     <xs:simpleType name="estado_prestamo">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="en_curso"/>
+            <xs:enumeration value="en_curso"/> <!-- Enumeración de prestamo:estado-->
             <xs:enumeration value="devuelto"/>
             <xs:enumeration value="retraso"/>
         </xs:restriction>

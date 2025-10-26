@@ -95,13 +95,13 @@
 
     <xs:simpleType name="email_rest">
         <xs:restriction base="xs:string">
-            <xs:pattern value="[^@]+@[^@]+\.[^@]+"/>
+            <xs:pattern value="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/> <!-- Para email valido, primer bloque acepta letras, numeros y ._- , +@, segundo bloque acepta letras, numeros . y - , seguido de un . y termina con minimo 2 letras-->
         </xs:restriction>
     </xs:simpleType>
 
     <xs:simpleType name="tipoNIFoNIE">
-    <xs:restriction base="xs:string">
-        <xs:pattern value="([0-9]{8}[A-Za-z])|([XYZxyz][0-9]{7}[A-Za-z])"/>
-    </xs:restriction>
-</xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([0-9]{8}[A-Za-z])|([XYZxyz][0-9]{7}[A-Za-z])"/> <!-- Permitimos nif o nie, para el nif, 8 digitos numéricos, seguido de una letra. Para el nie, empieza por una letra entre XYZ, seguida por 7 números, y termian por una letra.-->
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
